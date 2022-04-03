@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  div.product-update-container
+    h1.page-heading= title
+    
+    form(method="POST" action="" enctype="multipart/form-data")
+     div.product-title-input-container
+      label(for="name") Title
+      input#name(type="text", placeholder="Title of the product" name="name" required="true" value=(undefined===product ? "" : product.name))
+    
+     div.product-image-input-container(style="position: relative")
+      label(for="image") Image (optional)
+      input#image(type="file", name="image" required='true')
+
+     div.product-brand-input-container
+      label(for="brand") Brand
+      input#brand(type="text", placeholder="Brand of the product" name="brand" required="true" value=(undefined===product ? "" : product.brand))
+
+     div.product-price-input-container
+      label(for="price") Price ($)
+      input#price(type="number", placeholder="Price of the product" name="price" required="true" min="0.1" max="1000" step="any" value=(undefined===product ? "" : product.price))
+
+     div.product-categories-input-container
+      label Categories
+      div.product-categories-choices
+        for category in categories
+          div
+            input(type="checkbox", name="category", id=category._id, value=category._id, checked=category.checked )
+            label(for=category._id) #{category.name}
+
+     div.product-description-input-container
+      label(for="description") Description
+      if product
+       textarea#description(placeholder="Description of the product" name="description" required="true" rows="4" cols="30" minlength="3" maxlength="500" ) #{product.description}
+      else
+       textarea#description(placeholder="Description of the product" name="description" required="true" rows="4" cols="30" minlength="3" maxlength="500" )
+
+     if title.split(" ")[0] == "Create"
+      button(type='submit') Create
+     else
+      button(type='submit') Update
+    
+    if errors 
+     ul
+      for error in errors
+        li!= error.msg

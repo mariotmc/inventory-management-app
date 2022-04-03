@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.product-detail-container
+    h1.page-heading= title
+
+    hr
+
+    div.product-info
+     if product.category[0]
+      p Category: 
+       a(href=product.category[0].url) #{product.category[0].name}
+     else 
+     p Brand: #{product.brand}
+     p Price: $#{product.price}
+     p Description: #{product.description}
+
+    hr
+
+    div.delete-update-links
+     a(href=product.url+'/delete') Delete product
+     a(href=product.url+'/update') Update product

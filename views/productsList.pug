@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.products-container
+    h1.page-heading= title
+
+    ul.list-of-products
+     each product in listOfProducts
+      a(href=product.url)
+       li.product
+        if product.image == "{}"
+         img(src="/images/defaultCandy.webp", alt="")
+        else
+         img(src=`${product.image.path}`, alt="")
+        p #{product.name}
+     else
+      p There are no products

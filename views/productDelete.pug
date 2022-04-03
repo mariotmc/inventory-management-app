@@ -1,0 +1,31 @@
+extends layout
+
+block content
+ div.product-delete-container
+  h1.page-heading Delete: #{product.name}
+
+  hr
+
+  div.product-info
+   if product.category.length == 1
+     p Category: 
+      each category in product.category
+       a(href=category.url) #{category.name}
+   if product.category.length > 1
+     p Categories: 
+      each category in product.category
+       a(href=category.url) #{category.name}
+       |, 
+   p Brand: #{product.brand}
+   p Price: $#{product.price}
+   p Description: #{product.description}
+
+  hr
+  
+  p.product-delete-warning Do you really want to delete this roduct?
+    
+   form.product-delete-form(method='POST' action='')
+    div
+     input#id(type='hidden',name='id', required='true', value=product._id )
+
+     button.product-delete-button(type='submit') Delete
