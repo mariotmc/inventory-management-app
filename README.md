@@ -1,3 +1,3 @@
 # Inventory Management App
 
-Live:
+Live: https://candy-paradise.herokuapp.com/
