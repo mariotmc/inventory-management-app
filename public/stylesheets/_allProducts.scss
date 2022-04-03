@@ -1,0 +1,21 @@
+@use "functions" as *;
+@use "variables" as *;
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    margin-bottom: rem(30);
+  }
+}
+
+.list-of-products {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

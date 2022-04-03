@@ -1,0 +1,31 @@
+@use "functions" as *;
+@use "variables" as *;
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  h1,
+  div {
+    margin-bottom: auto;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: rem(20);
+
+    a {
+      padding: rem(15);
+      border-radius: 9999px;
+    }
+
+    a:hover {
+      background-color: var(--pink);
+    }
+  }
+}

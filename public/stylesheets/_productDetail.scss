@@ -1,0 +1,12 @@
+@use "functions" as *;
+@use "variables" as *;
+
+.product-detail-container {
+  max-width: rem(800);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+}

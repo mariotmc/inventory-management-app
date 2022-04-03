@@ -1,0 +1,119 @@
+@use "functions" as *;
+@use "variables" as *;
+
+.product-update-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    margin-bottom: rem(20);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .product-title-input-container,
+    .product-image-input-container,
+    .product-brand-input-container,
+    .product-price-input-container,
+    .product-categories-input-container,
+    .product-description-input-container {
+      margin-bottom: rem(20);
+    }
+  }
+
+  button {
+    min-width: rem(300);
+    padding: rem(5) 0;
+    font-size: rem(25);
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--pink);
+    border: none;
+    border-radius: rem(5);
+    cursor: pointer;
+  }
+}
+
+.product-title-input-container,
+.product-image-input-container,
+.product-brand-input-container,
+.product-price-input-container,
+.product-description-input-container {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    align-self: flex-start;
+    font-size: rem(20);
+    font-weight: 700;
+    margin-bottom: rem(4);
+  }
+
+  input,
+  textarea {
+    width: rem(300);
+    padding: rem(5);
+    font-size: rem(20);
+    color: var(--white);
+    background-color: var(--blue);
+    border: rem(2) solid var(--pink);
+    border-radius: rem(5);
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.product-categories-input-container {
+  display: flex;
+  flex-direction: column;
+  width: rem(300);
+
+  .product-categories-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(5);
+    padding: rem(10);
+    border: rem(2) solid var(--pink);
+    border-radius: rem(5);
+
+    div {
+      display: flex;
+      align-items: center;
+
+      input,
+      label {
+        cursor: pointer;
+      }
+
+      label {
+        margin: 0 0 0 rem(3);
+        font-weight: 400;
+        font-size: rem(18);
+      }
+    }
+  }
+
+  label {
+    align-self: flex-start;
+    font-size: rem(20);
+    font-weight: 700;
+    margin-bottom: rem(4);
+  }
+
+  input {
+    margin: 0;
+    min-width: rem(20);
+    min-height: rem(20);
+  }
+}

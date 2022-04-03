@@ -1,0 +1,59 @@
+@use "functions" as *;
+@use "variables" as *;
+
+.category-update-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  h1,
+  form {
+    margin-bottom: auto;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.category-update-input-container {
+  display: flex;
+  flex-direction: column;
+  width: rem(300);
+}
+
+.category-update-label {
+  align-self: flex-start;
+  font-size: rem(20);
+  font-weight: 700;
+  margin-bottom: rem(4);
+}
+
+.category-update-input {
+  min-width: rem(300);
+  margin-bottom: rem(30);
+  padding: rem(5);
+  font-size: rem(20);
+  color: var(--white);
+  background-color: var(--blue);
+  border: rem(2) solid var(--pink);
+  border-radius: rem(5);
+  outline: none;
+}
+
+.category-update-button {
+  min-width: rem(300);
+  padding: rem(5) 0;
+  font-size: rem(25);
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--pink);
+  border: none;
+  border-radius: rem(5);
+  cursor: pointer;
+}

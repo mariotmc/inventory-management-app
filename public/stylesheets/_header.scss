@@ -1,0 +1,10 @@
+@use "functions" as *;
+@use "variables" as *;
+
+header {
+  min-height: rem(200);
+  background-image: url("../images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

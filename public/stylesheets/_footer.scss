@@ -1,0 +1,8 @@
+@use "functions" as *;
+@use "variables" as *;
+
+footer {
+  min-height: rem(75);
+  margin-top: auto;
+  background-color: var(--pink);
+}

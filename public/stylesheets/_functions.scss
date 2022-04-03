@@ -1,0 +1,23 @@
+@use "sass:math";
+
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+@function em($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1em;
+}
+
+// 360px (mobile), 768px (tablet), 1366px (small desktop), 1920px (large desktop)
+$breakpoints: (
+  "small": "22.5em",
+  "medium": "48em",
+  "large": "85.375em",
+  "xlarge": "120em",
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
