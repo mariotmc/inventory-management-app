@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.categories-container
+    h1.page-heading= title
+
+    ul.list-of-categories
+     each category in listOfCategories
+      a(href=category.url)
+       li.category
+        if category.image == "{}"
+         img(src="/images/defaultCandy.webp", alt="")
+        else
+         img(src=`${category.image.path}`, alt="")
+        p #{category.name}
+    
+     else
+      p There are no categories

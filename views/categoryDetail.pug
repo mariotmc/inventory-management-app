@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.category-detail-container
+    h1.page-heading= title
+
+    div.delete-update-links
+     a(href=category.url+'/delete') Delete category
+     a(href=category.url+'/update') Update category
+
+    ul.list-of-category-products
+     each category in categoryProducts
+      a(href=category.url)
+       li.category-product
+        if category.image == "{}"
+         img(src="/images/defaultCandy.webp", alt="")
+        else
+         img(src=`${category.image.path}`, alt="")
+        p #{category.name} 
+     else
+       p There are no products

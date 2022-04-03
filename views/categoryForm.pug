@@ -1,0 +1,24 @@
+extends layout
+
+block content
+ div.category-update-container
+  h1.page-heading #{title}
+          
+  if errors 
+   ul(style="margin-bottom: 20px")
+    for error in errors
+     li(style="font-weight: 700")!= error.msg
+
+  form(method='POST' action='' enctype="multipart/form-data")
+   div.category-update-input-container
+    label.category-update-label(for='name') Name
+    input#name.category-update-input(type='text', placeholder='Sweet, Sour etc.' name='name' required='true' value=(undefined===category ? '' : category.name) )
+
+   div.category-update-input-container
+    label.category-update-label(for="image") Image 
+    input#image.category-update-input(type="file", name="image" required='true')
+
+   if title.split(" ")[0] == "Create"
+    button.category-update-button(type='submit') Create
+   else
+    button.category-update-button(type='submit') Update
